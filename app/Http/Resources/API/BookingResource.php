@@ -27,6 +27,7 @@ class BookingResource extends JsonResource
             'customer_id'           => $this->customer_id,
             'service_id'            => $this->service_id,
             'provider_id'           => $this->provider_id,
+            'image'                 => $this->image,
             'date'                  => $this->date,
             'price'                 => optional($this->service)->price,
             'type'                  => optional($this->service)->type,

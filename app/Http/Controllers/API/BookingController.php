@@ -107,7 +107,7 @@ class BookingController extends Controller
     public function getBookingDetail(Request $request){
 
         $id = $request->booking_id;
-        
+        // dd($id);
         $booking_data = Booking::with('customer','provider','service','bookingRating','bookingPostJob','bookingAddonService')->where('id',$id)->first();
 
         
