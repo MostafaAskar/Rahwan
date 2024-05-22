@@ -40,10 +40,9 @@ use App\Http\Controllers\HandymanRatingController;
 use App\Http\Controllers\UserServiceListController;
 use App\Http\Controllers\ProviderSlotController;
 use App\Http\Controllers\ServiceAddonController;
-
-
-
-
+use AWS\CRT\HTTP\Request;
+use App\Http\Controllers\API;
+use App\Http\Controllers\CheckoutController;
 
 /*
 |--------------------------------------------------------------------------
@@ -60,6 +59,11 @@ use App\Http\Controllers\ServiceAddonController;
 
 require __DIR__.'/auth.php';
 Route::get('/', [FrontendController::class, 'index'])->name('frontend.index');
+
+//PayMob Route
+Route::get('/checkout' , [CheckoutController::class, 'index']);
+
+
 Route::group(['prefix' => 'auth'], function() {
     Route::get('login', [HomeController::class, 'authLogin'])->name('auth.login');
     Route::get('register', [HomeController::class, 'authRegister'])->name('auth.register');

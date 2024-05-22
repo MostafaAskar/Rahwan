@@ -4,6 +4,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers;
 use App\Http\Controllers\API;
+use App\Http\Controllers\API\CheckOutController;
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -21,6 +22,9 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 });
 */
 require __DIR__.'/admin-api.php';
+
+// Route::post('/credit', [API\PayMobController::class, 'credit'])->name('api.checkout'); // this route send all functions data to paymob
+// Route::get('/callback', [API\PayMobController::class, 'callback'])->name('api.callback'); // this route get all reponse data to paymob
 
 Route::get('category-list',[API\CategoryController::class,'getCategoryList']);
 Route::get('subcategory-list',[API\SubCategoryController::class,'getSubCategoryList']);
@@ -95,6 +99,18 @@ Route::group(['middleware' => ['auth:sanctum']], function () {
     Route::get('payment-history',[API\PaymentController::class, 'paymentHistory']);
     Route::get('cash-detail',[API\PaymentController::class, 'paymentDetail']);
     Route::get('user-bank-detail',[API\CommanController::class, 'getBankList']);
+
+    // paymob
+    // Route::post('checkout',[API\CheckoutController::class, 'index']);
+    // Route::post('checkout/processed',[API\PayMobController::class, 'checkout_processed']);
+
+    // Route::get('/thankyou', function () {return view('thank-you');});
+    
+    
+    // Paymob Routes
+    // Route::get('/checkout' , [API\CheckOutController::class, 'index']);
+    Route::post('/credit', [API\PayMobController::class, 'credit'])->name('checkout'); // this route send all functions data to paymob
+    Route::get('/callback', [API\PayMobController::class, 'callback'])->name('callback'); // this route get all reponse data to paymob
 
 
     Route::post('save-provideraddress', [ App\Http\Controllers\ProviderAddressMappingController::class, 'store' ]);

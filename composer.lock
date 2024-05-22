@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "7ee37dd6402311bd0c4dd03660161c24",
+    "content-hash": "0f69c853b5dcd5cf96047d3febcdd1e4",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -5873,6 +5873,44 @@
                 "source": "https://github.com/sabberworm/PHP-CSS-Parser/tree/8.4.0"
             },
             "time": "2021-12-11T13:40:54+00:00"
+        },
+        {
+            "name": "samir-hussein/paymob",
+            "version": "2.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/samir-hussein/paymob.git",
+                "reference": "5e7b59aba9fa810076925da9a17e02373ae494a4"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/samir-hussein/paymob/zipball/5e7b59aba9fa810076925da9a17e02373ae494a4",
+                "reference": "5e7b59aba9fa810076925da9a17e02373ae494a4",
+                "shasum": ""
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "PayMob\\": "paymob/laravel",
+                    "Paymob\\": "paymob"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Samir Ebrahim Hussein",
+                    "email": "samirhussein274@gmail.com"
+                }
+            ],
+            "description": "paymob payment gateway",
+            "support": {
+                "issues": "https://github.com/samir-hussein/paymob/issues",
+                "source": "https://github.com/samir-hussein/paymob/tree/2.0"
+            },
+            "time": "2023-01-24T23:40:17+00:00"
         },
         {
             "name": "setasign/fpdi",

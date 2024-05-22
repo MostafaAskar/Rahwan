@@ -20,8 +20,11 @@ class PaymentController extends Controller
     public function savePayment(Request $request)
     {
         $data = $request->all();
+        dd($data );
         $data['datetime'] = isset($request->datetime) ? date('Y-m-d H:i:s',strtotime($request->datetime)) : date('Y-m-d H:i:s');
         $result = Payment::create($data);
+        // dd($result );
+
         $booking = Booking::find($request->booking_id);
         if(!empty($result) && $result->payment_status == 'advanced_paid'){
             $booking->advance_paid_amount  = $request->advance_payment_amount;
