@@ -218,15 +218,43 @@ class BookingController extends Controller
 
 
         //upload booking image
-        if ($request->hasFile('image')) {
-            $imagePath = $request->file('image')->store('Booking', 'public');
-            // dd($imagePath);
-            $data['image'] = $imagePath;
+
+
+        if ($request->input('image')) {
+            $request->validate([
+                'image' => 'required|string',  // Make sure 'image' field is a string
+            ]);
+    
+            // Get the base64 string from the request
+            $base64Image = $request->input('image');
+    
+            // Remove the base64 header (if exists)
+            $base64Image = preg_replace('/^data:image\/\w+;base64,/', '', $base64Image);
+    
+            // Decode the base64 string
+            $imageData = base64_decode($base64Image);
+    
+            // Generate a unique file name
+            $fileName =  uniqid() . '.png';
+    
+            // Save the image to the storage
+            Storage::disk('public')->put('Booking/' . $fileName, $imageData);
+            $data['image'] = 'storage/Booking/' .$fileName;
             // dd($data['image']);
-        } else {
+            } else {
+                
+                return response()->json(['message' => 'image Required'], 200);
+            }
+
+        // if ($request->hasFile('image')) {
+        //     $imagePath = $request->file('image')->store('Booking', 'public');
+        //     // dd($imagePath);
+        //     $data['image'] = $imagePath;
+        //     // dd($data['image']);
+        // } else {
             
-            return response()->json(['message' => 'image Required'], 200);
-        }
+        //     return response()->json(['message' => 'image Required'], 200);
+        // }
 
 
 

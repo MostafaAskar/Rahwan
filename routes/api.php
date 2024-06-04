@@ -100,12 +100,9 @@ Route::group(['middleware' => ['auth:sanctum']], function () {
     Route::get('cash-detail',[API\PaymentController::class, 'paymentDetail']);
     Route::get('user-bank-detail',[API\CommanController::class, 'getBankList']);
 
-    // paymob
-    // Route::post('checkout',[API\CheckoutController::class, 'index']);
-    // Route::post('checkout/processed',[API\PayMobController::class, 'checkout_processed']);
-
-    // Route::get('/thankyou', function () {return view('thank-you');});
-    
+    // location 
+    Route::post('add-location',[API\LocationController::class, 'store']);
+    Route::get('display-location/{id}',[API\LocationController::class, 'show']);
     
     // Paymob Routes
     // Route::get('/checkout' , [API\CheckOutController::class, 'index']);

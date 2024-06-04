@@ -16,7 +16,7 @@
 </iframe> --}}
 
 <div class="container py-5 text-center">
-  <form action="{{ route('api.checkout') }}" method="POST">
+  <form action="{{ route('checkout') }}" method="POST">
       @csrf
       @method('POST')
       {{-- <h1>{{$message}}</h1> --}}

@@ -1,0 +1,336 @@
+{
+	"info": {
+		"_postman_id": "2cc26dcb-88bd-40be-8f28-cf3018b5d113",
+		"name": "rahwan",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "26571580"
+	},
+	"item": [
+		{
+			"name": "paymob",
+			"item": [
+				{
+					"name": "Checkout",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "\n{\n    \"api_key\": \"ZXlKaGJHY2lPaUpJVXpVeE1pSXNJblI1Y0NJNklrcFhWQ0o5LmV5SmpiR0Z6Y3lJNklrMWxjbU5vWVc1MElpd2ljSEp2Wm1sc1pWOXdheUk2T1RjM05ETTBMQ0p1WVcxbElqb2lhVzVwZEdsaGJDSjkuTE1tZ19vQlg4aGF3ZFVNQ1Yyc3pQaFVtRzVXaFhkazI2WHNBWHNtaEZ1RlNmclZkU1lOZGtpaUFCOEcyWEpGNXRZVTh5U3Z0SXBiWkhBUHBkejVaZlE=\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://rahwan.motory-sa.com/checkout",
+							"protocol": "https",
+							"host": [
+								"rahwan",
+								"motory-sa",
+								"com"
+							],
+							"path": [
+								"checkout"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Order",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer 88|MvgUqrNTWvFCk6EYRIe4SdJA2vHWgXQqDbOYL2R2",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "// {\n//   \"auth_token\":  \"ZXlKaGJHY2lPaUpJVXpVeE1pSXNJblI1Y0NJNklrcFhWQ0o5LmV5SmpiR0Z6Y3lJNklrMWxjbU5vWVc1MElpd2ljSEp2Wm1sc1pWOXdheUk2T1RjM05ETTBMQ0p3YUdGemFDSTZJbVU0WXpJNE56QmlNbU00TkRObFpEQXlaak15TWpKbU5XVXdNRFk0WlRsak5EY3hOemRsTW1FNE1HWmlOV0l3TldZellXTm1NRFE0T1ROaU5qRmpNaklpTENKbGVIQWlPakUzTVRZeE1UQXdNRFI5LlY5ekllUWRLSFJ6dDlzcXhPbjRFQXRDWkNVNHg0TV9wc1pFWWRKZXNvdE04U1U2NFlCVF9sSTZnSkgtbnZrT1hwb2VybTlicXoxZ3ppd0xqVHczc2ZB\",\n//   \"delivery_needed\": \"false\",\n//   \"amount_cents\": \"100\",\n//   \"currency\": \"EGP\",\n//   \"merchant_order_id\": 5,\n//   \"items\": [\n//     {\n//         \"name\": \"ASC1515\",\n//         \"amount_cents\": \"500000\",\n//         \"description\": \"Smart Watch\",\n//         \"quantity\": \"1\"\n//     },\n//     { \n//         \"name\": \"ERT6565\",\n//         \"amount_cents\": \"200000\",\n//         \"description\": \"Power Bank\",\n//         \"quantity\": \"1\"\n//     }\n//     ],\n//   \"shipping_data\": {\n//     \"apartment\": \"803\", \n//     \"email\": \"claudette09@exa.com\", \n//     \"floor\": \"42\", \n//     \"first_name\": \"Clifford\", \n//     \"street\": \"Ethan Land\", \n//     \"building\": \"8028\", \n//     \"phone_number\": \"+86(8)9135210487\", \n//     \"postal_code\": \"01898\", \n//      \"extra_description\": \"8 Ram , 128 Giga\",\n//     \"city\": \"Jaskolskiburgh\", \n//     \"country\": \"CR\", \n//     \"last_name\": \"Nicolas\", \n//     \"state\": \"Utah\"\n//   },\n//     \"shipping_details\": {\n//         \"notes\" : \" test\",\n//         \"number_of_packages\": 1,\n//         \"weight\" : 1,\n//         \"weight_unit\" : \"Kilogram\",\n//         \"length\" : 1,\n//         \"width\" :1,\n//         \"height\" :1,\n//         \"contents\" : \"product of some sorts\"\n//     }\n// }\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://9b61-156-210-220-28.ngrok-free.app/api/credit",
+							"protocol": "https",
+							"host": [
+								"9b61-156-210-220-28",
+								"ngrok-free",
+								"app"
+							],
+							"path": [
+								"api",
+								"credit"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "auth",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "email",
+							"value": "admin@admin.com",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "12345678",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/login",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "booking-save",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer 88|MvgUqrNTWvFCk6EYRIe4SdJA2vHWgXQqDbOYL2R2",
+						"type": "text"
+					},
+					{
+						"key": "accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "image",
+							"type": "file",
+							"src": "/home/mostafa/Pictures/Screenshots/Screenshot from 2024-05-13 19-24-12.png",
+							"disabled": true
+						},
+						{
+							"key": "service_id",
+							"value": "62",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "status",
+							"value": "pending",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "date",
+							"value": "2023-09-05 16:06:00",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "provider_id",
+							"value": "15",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "image",
+							"type": "file",
+							"src": "/home/mostafa/Pictures/Screenshots/Screenshot from 2024-05-16 02-37-05.png"
+						},
+						{
+							"key": "service_id",
+							"value": "62",
+							"type": "text"
+						},
+						{
+							"key": "provider_id",
+							"value": "15",
+							"type": "text"
+						},
+						{
+							"key": "date",
+							"value": "2024-05-17 10:00:00",
+							"type": "text"
+						},
+						{
+							"key": "start_at",
+							"value": "2024-05-17 10:00:00",
+							"type": "text"
+						},
+						{
+							"key": "end_at",
+							"value": "2024-05-17 12:00:00",
+							"type": "text"
+						},
+						{
+							"key": "quantity",
+							"value": "1",
+							"type": "text"
+						},
+						{
+							"key": "amount",
+							"value": "50",
+							"type": "text"
+						},
+						{
+							"key": "discount",
+							"value": "0",
+							"type": "text"
+						},
+						{
+							"key": "total_amount",
+							"value": "50",
+							"type": "text"
+						},
+						{
+							"key": "description",
+							"value": "Booking for cleaning service",
+							"type": "text"
+						},
+						{
+							"key": "reason",
+							"value": "Regular cleaning",
+							"type": "text"
+						},
+						{
+							"key": "coupon_id",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "status",
+							"value": "pending",
+							"type": "text"
+						},
+						{
+							"key": "address",
+							"value": "123 Main Street, City, Country",
+							"type": "text"
+						},
+						{
+							"key": "payment_id",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "duration_diff",
+							"value": "0",
+							"type": "text"
+						},
+						{
+							"key": "display_name",
+							"value": "jhhg",
+							"type": "text",
+							"disabled": true
+						}
+					]
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/booking-save",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"booking-save"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "booking-list",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer 89|eeAbgi49X1aDD4dSpHyWhlgvF73MqMAwCDXKWneb",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "id",
+							"value": "25",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/booking-list",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"booking-list"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "payment",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "booking-assigned",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		}
+	]
+}
